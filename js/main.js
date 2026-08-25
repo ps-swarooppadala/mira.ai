@@ -393,7 +393,7 @@ function updateHoldTimer(snapshot) {
 async function main() {
   startBtn.disabled = true;
   startBtn.textContent = "Starting\u2026";
-  log("PranaAI session started. Loading pose model\u2026", "system");
+  log("Mira.ai session started. Loading pose model\u2026", "system");
 
   let landmarker, stream;
   try {
@@ -417,7 +417,7 @@ async function main() {
   cameraHint.classList.add("hidden");
 
   log(`Camera live. Coaching voice: ${getVoiceName()}.`, "system");
-  say("Hi, I'm your Prana coach. We'll flow through three poses together, holding each for ten seconds.", {
+  say("Hi, I'm your Mira coach. We'll flow through three poses together, holding each for ten seconds.", {
     kind: "cue",
   });
   coach.start();

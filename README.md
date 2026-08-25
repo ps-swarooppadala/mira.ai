@@ -1,4 +1,4 @@
-# PranaAI — Warrior II Prototype
+# Mira.ai — Warrior II Prototype
 
 A working, browser-based build of the loop from the spec:
 

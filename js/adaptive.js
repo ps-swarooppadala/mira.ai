@@ -1,4 +1,4 @@
-const STORAGE_KEY = "pranaai.guidance.level";
+const STORAGE_KEY = "mira.ai.guidance.level";
 const EASE_STEP = 0.22;
 const TIGHTEN_STEP = 0.07;
 
