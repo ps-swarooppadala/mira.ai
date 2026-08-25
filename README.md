@@ -24,6 +24,27 @@ npx serve .
 Then open **http://localhost:8080** in Chrome or Edge (best WebGL/WASM support), allow
 camera access, and step back so your whole body is in frame.
 
+## Deploy to GitHub Pages
+
+This is a static site (no backend, no build step), so GitHub Pages can serve it as-is.
+Every asset reference in `index.html`/`js/`/`style.css` is a relative path, so it works
+whether Pages serves the repo at the domain root or under a project subpath like
+`https://<user>.github.io/mira.ai/`.
+
+**Option A — GitHub Actions (already set up in this repo):**
+Push to `main` and the workflow in `.github/workflows/pages.yml` publishes the site
+automatically. One-time setup: in the repo, go to **Settings → Pages → Source** and
+choose **GitHub Actions**. The next push (or a manual run from the **Actions** tab)
+deploys it.
+
+**Option B — Deploy from a branch (no Actions):**
+**Settings → Pages → Source** → **Deploy from a branch** → pick `main` and `/ (root)` →
+**Save**. GitHub publishes the same files without running any workflow.
+
+Either way, camera access works fine — GitHub Pages serves everything over HTTPS, which
+is required for `getUserMedia`. `.nojekyll` is included so GitHub doesn't run the site
+through Jekyll first.
+
 ## Try it
 
 1. Stand facing the camera, full body visible.
