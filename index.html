@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PranaAI — Guided Flow Coach</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">🪷</span>
+        <span class="brand-name">PranaAI</span>
+        <span class="brand-sep">·</span>
+        <span id="brandPose" class="brand-pose">Warrior II</span>
+      </div>
+      <ol id="poseStepper" class="pose-stepper"></ol>
+      <div id="statusPill" class="status-pill status-nopose">Get into position</div>
+    </header>
+
+    <main class="stage">
+
+      <section class="camera-panel">
+        <div class="camera-stage">
+          <video id="webcam" autoplay playsinline muted></video>
+          <canvas id="overlay"></canvas>
+          <div id="holdTimer" class="hold-timer">
+            <span class="hold-timer-value" id="holdTimerValue">0.0s</span>
+            <span class="hold-timer-label">holding</span>
+          </div>
+          <div id="restBanner" class="rest-banner">
+            <span class="rest-title" id="restTitle">Nicely held</span>
+            <span class="rest-sub" id="restSub">Relax whenever you're ready…</span>
+          </div>
+          <div id="startOverlay" class="start-overlay">
+            <span class="start-mark">🪷</span>
+            <h1 class="start-title">Ready to flow?</h1>
+            <p class="start-copy">
+              I'll guide you through Warrior II, Warrior I, and Tree Pose — coaching you live with
+              voice and on-screen cues. Turn your camera on and step back so your whole body is in frame.
+            </p>
+            <button id="startBtn" class="start-btn" type="button">Start session</button>
+          </div>
+          <div id="cameraHint" class="camera-hint hidden">
+            Allow camera access to begin — step back so your whole body is in frame.
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+
+        <div class="card reference-card">
+          <h2>Target Pose</h2>
+          <p id="referenceName" class="reference-name">Warrior II <span class="sanskrit">Virabhadrasana II</span></p>
+          <img id="referenceImg" src="assets/warrior2-reference.svg" alt="Reference pose" class="reference-img" />
+          <p id="referenceCaption" class="reference-caption">Front knee bent ~90°, back leg straight, arms level with the floor.</p>
+        </div>
+
+        <div class="card angles-card">
+          <h2>Live Read-Out</h2>
+          <div id="metricRows"></div>
+          <div id="chipRow" class="chip-row"></div>
+        </div>
+
+        <div class="card hold-card">
+          <h2>Hold Timer</h2>
+          <div class="hold-main">
+            <span id="holdSeconds" class="hold-seconds">0.0</span>
+            <span class="hold-unit">of <b id="holdTarget">10</b>s in pose</span>
+          </div>
+          <div class="hold-bar"><div id="holdBarFill" class="hold-bar-fill"></div></div>
+          <div class="hold-stats">
+            <span>Last hold <b id="lastHold">—</b></span>
+            <span>Best <b id="bestHold">—</b></span>
+          </div>
+          <div class="guidance-row">
+            <span class="guidance-label">Coach guidance</span>
+            <span id="guidancePill" class="guidance-pill">Balanced</span>
+          </div>
+          <p id="guidanceNote" class="guidance-note">textbook shape, with room to breathe</p>
+        </div>
+
+        <div class="card coaching-card">
+          <div class="coaching-header">
+            <span id="speakerIcon" class="speaker-icon">🔊</span>
+            <h2>Coach</h2>
+            <button id="muteBtn" class="mute-btn" type="button" aria-pressed="false">Voice on</button>
+            <div class="recheck-ring-wrap">
+              <svg id="recheckRing" class="recheck-ring" viewBox="0 0 36 36">
+                <circle class="ring-bg" cx="18" cy="18" r="16"></circle>
+                <circle id="ringProgress" class="ring-progress" cx="18" cy="18" r="16"></circle>
+              </svg>
+            </div>
+          </div>
+          <p id="coachingText" class="coaching-text">Step into Warrior II to begin.</p>
+          <div class="coach-log-wrap">
+            <h3 class="coach-log-title">Session log</h3>
+            <ul id="coachLog" class="coach-log"></ul>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

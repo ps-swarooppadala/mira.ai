@@ -1,0 +1,45 @@
+<svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bone { stroke: #69a297; stroke-width: 6; stroke-linecap: round; fill: none; }
+      .joint { fill: #d9e3de; }
+      .hotjoint { fill: #e8763a; }
+      .angle-mark { stroke: #e8763a; stroke-width: 2; fill: none; stroke-dasharray: 4 3; }
+      .lbl { font-family: Calibri, Arial, sans-serif; font-size: 13px; fill: #9fb6ad; }
+    </style>
+  </defs>
+
+  <!-- head -->
+  <circle cx="150" cy="72" r="16" fill="none" stroke="#69a297" stroke-width="6" />
+
+  <!-- arms reaching straight overhead, biceps framing the ears -->
+  <line class="bone" x1="132" y1="120" x2="136" y2="20" />
+  <line class="bone" x1="168" y1="120" x2="164" y2="20" />
+  <circle class="joint" cx="136" cy="20" r="6" />
+  <circle class="joint" cx="164" cy="20" r="6" />
+  <circle class="joint" cx="132" cy="120" r="6" />
+  <circle class="joint" cx="168" cy="120" r="6" />
+
+  <!-- shoulders + upright torso -->
+  <line class="bone" x1="132" y1="120" x2="168" y2="120" />
+  <line class="bone" x1="150" y1="120" x2="150" y2="185" />
+  <circle class="joint" cx="150" cy="185" r="6" />
+  <path class="angle-mark" d="M 150 130 L 150 180" />
+  <text class="lbl" x="158" y="160">upright</text>
+
+  <!-- front leg (right of image, bent ~90 degrees, knee over ankle) -->
+  <line class="bone" x1="150" y1="185" x2="212" y2="228" />
+  <line class="bone" x1="212" y1="228" x2="212" y2="296" />
+  <circle class="hotjoint" cx="212" cy="228" r="9" />
+  <circle class="joint" cx="212" cy="296" r="6" />
+  <path class="angle-mark" d="M 197 228 A 20 20 0 0 1 212 213" />
+  <text class="lbl" x="219" y="225">~90°</text>
+
+  <!-- back leg (left of image, straight, heel grounded) -->
+  <line class="bone" x1="150" y1="185" x2="105" y2="245" />
+  <line class="bone" x1="105" y1="245" x2="70" y2="300" />
+  <circle class="joint" cx="105" cy="245" r="6" />
+  <circle class="joint" cx="70" cy="300" r="6" />
+
+  <text class="lbl" x="150" y="316" text-anchor="middle">Hips square · chest lifted · arms straight overhead</text>
+</svg>

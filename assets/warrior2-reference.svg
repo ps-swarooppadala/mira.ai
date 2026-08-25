@@ -1,0 +1,44 @@
+<svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bone { stroke: #69a297; stroke-width: 6; stroke-linecap: round; fill: none; }
+      .joint { fill: #d9e3de; }
+      .hotjoint { fill: #e8763a; }
+      .angle-mark { stroke: #e8763a; stroke-width: 2; fill: none; stroke-dasharray: 4 3; }
+      .lbl { font-family: Calibri, Arial, sans-serif; font-size: 13px; fill: #9fb6ad; }
+    </style>
+  </defs>
+
+  <!-- head -->
+  <circle cx="150" cy="42" r="16" fill="none" stroke="#69a297" stroke-width="6" />
+
+  <!-- torso -->
+  <line class="bone" x1="150" y1="58" x2="150" y2="150" />
+
+  <!-- arms (level with the floor) -->
+  <line class="bone" x1="150" y1="90" x2="55" y2="90" />
+  <line class="bone" x1="150" y1="90" x2="245" y2="90" />
+  <circle class="joint" cx="55" cy="90" r="6" />
+  <circle class="joint" cx="245" cy="90" r="6" />
+  <circle class="joint" cx="150" cy="90" r="6" />
+
+  <!-- hips -->
+  <line class="bone" x1="150" y1="150" x2="150" y2="150" />
+  <circle class="joint" cx="150" cy="150" r="6" />
+
+  <!-- front leg (right side of image, bent ~90 degrees) -->
+  <line class="bone" x1="150" y1="150" x2="205" y2="215" />
+  <line class="bone" x1="205" y1="215" x2="205" y2="290" />
+  <circle class="hotjoint" cx="205" cy="215" r="9" />
+  <circle class="joint" cx="205" cy="290" r="6" />
+  <path class="angle-mark" d="M 190 215 A 20 20 0 0 1 205 200" />
+  <text class="lbl" x="212" y="212">~90°</text>
+
+  <!-- back leg (left side of image, straight) -->
+  <line class="bone" x1="150" y1="150" x2="105" y2="230" />
+  <line class="bone" x1="105" y1="230" x2="80" y2="300" />
+  <circle class="joint" cx="105" cy="230" r="6" />
+  <circle class="joint" cx="80" cy="300" r="6" />
+
+  <text class="lbl" x="150" y="315" text-anchor="middle">Front knee over front ankle · back leg straight</text>
+</svg>

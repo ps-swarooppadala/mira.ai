@@ -1,0 +1,44 @@
+<svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bone { stroke: #69a297; stroke-width: 6; stroke-linecap: round; fill: none; }
+      .joint { fill: #d9e3de; }
+      .hotjoint { fill: #e8763a; }
+      .angle-mark { stroke: #e8763a; stroke-width: 2; fill: none; stroke-dasharray: 4 3; }
+      .lbl { font-family: Calibri, Arial, sans-serif; font-size: 13px; fill: #9fb6ad; }
+    </style>
+  </defs>
+
+  <!-- palms together above the head -->
+  <line class="bone" x1="134" y1="112" x2="150" y2="34" />
+  <line class="bone" x1="166" y1="112" x2="150" y2="34" />
+  <circle class="hotjoint" cx="150" cy="34" r="8" />
+  <text class="lbl" x="160" y="34">palms together</text>
+
+  <!-- head -->
+  <circle cx="150" cy="78" r="15" fill="none" stroke="#69a297" stroke-width="6" />
+
+  <!-- shoulders + tall spine -->
+  <line class="bone" x1="134" y1="112" x2="166" y2="112" />
+  <line class="bone" x1="150" y1="112" x2="150" y2="180" />
+  <circle class="joint" cx="134" cy="112" r="6" />
+  <circle class="joint" cx="166" cy="112" r="6" />
+  <circle class="joint" cx="150" cy="180" r="6" />
+
+  <!-- standing leg (right of image, straight and rooted) -->
+  <line class="bone" x1="150" y1="180" x2="163" y2="240" />
+  <line class="bone" x1="163" y1="240" x2="168" y2="300" />
+  <circle class="joint" cx="163" cy="240" r="6" />
+  <circle class="joint" cx="168" cy="300" r="6" />
+  <text class="lbl" x="176" y="272">rooted</text>
+
+  <!-- lifted leg: knee opened out to the side, sole on the inner thigh -->
+  <line class="bone" x1="150" y1="180" x2="82" y2="212" />
+  <line class="bone" x1="82" y1="212" x2="156" y2="215" />
+  <circle class="hotjoint" cx="82" cy="212" r="9" />
+  <circle class="joint" cx="156" cy="215" r="6" />
+  <text class="lbl" x="30" y="234">knee open</text>
+  <path class="angle-mark" d="M 156 215 A 22 22 0 0 0 158 193" />
+
+  <text class="lbl" x="150" y="316" text-anchor="middle">Sole on the inner thigh or calf · never on the knee</text>
+</svg>
