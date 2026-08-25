@@ -15,7 +15,7 @@ export function completionLineFor(pose, heldMs, isLast) {
 }
 
 export const SESSION_COMPLETE_LINE =
-  "That's your flow complete. Three poses, all held with steady breath. Stand tall, close your eyes for a moment, and notice how you feel. Namaste.";
+  "That's your flow now complete. Three poses, all held with steady breath. Stand tall, close your eyes for a moment, and notice how you feel. Namaste.";
 
 /** Spoken the first time the coach widens its tolerance, so the shift feels intentional. */
 const ADAPT_LINES = {
